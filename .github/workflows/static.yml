@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M Dwarf Informatics Ltd.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>M Dwarf Informatics Ltd.</h1>
+        <p>Innovating IT Consulting and Research</p>
+    </header>
+    
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Welcome to M Dwarf Informatics Ltd., where we provide expert IT consulting and cutting-edge research services. Our mission is to drive innovation and efficiency through technology.</p>
+        
+        <h2>Our Services</h2>
+        <ul>
+            <li>IT Consulting - Providing expert advice and solutions for businesses.</li>
+            <li>Research & Development - Exploring new technologies and methodologies.</li>
+            <li>Data Analytics - Leveraging data for smarter decision-making.</li>
+        </ul>
+        
+        <h2>Contact Us</h2>
+        <p>Email: gezapeti+public@gmail.com</p>
+
+    </div>
+    
+    <footer>
+        &copy; 2025 M Dwarf Informatics Ltd. All rights reserved.
+    </footer>
+</body>
+</html>
