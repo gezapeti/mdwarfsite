@@ -5,59 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M Dwarf Informatics Ltd.</title>
     <style>
+        :root {
+            --primary: #0a3d62;
+            --accent: #1e90ff;
+            --bg: #f4f6f8;
+            --text: #333;
+        }
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
+            font-family: "Inter", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
         }
         header {
-            background-color: #333;
-            color: white;
+            background-color: var(--primary);
+            color: #fff;
             text-align: center;
-            padding: 20px;
+            padding: 60px 20px 40px;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+        header p {
+            font-size: 1.1em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        nav {
+            background: #062743;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 40px 30px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+        h2 {
+            color: var(--primary);
+            margin-top: 30px;
+            font-weight: 600;
+        }
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
         }
         footer {
+            background-color: var(--primary);
+            color: #fff;
             text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 20px;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+        a.email {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        a.email:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.6em;
+            }
+            main {
+                padding: 25px 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>M Dwarf Informatics Ltd.</h1>
-        <p>Innovating IT Consulting and Research</p>
+        <p>Applied Research and Technology Consulting</p>
     </header>
-    
-    <div class="container">
-        <h2>About Us</h2>
-        <p>Welcome to M Dwarf Informatics Ltd., where we provide expert IT consulting and cutting-edge research services. Our mission is to drive innovation and efficiency through technology.</p>
-        
-        <h2>Our Services</h2>
-        <ul>
-            <li>IT Consulting - Providing expert advice and solutions for businesses.</li>
-            <li>Research & Development - Exploring new technologies and methodologies.</li>
-            <li>Data Analytics - Leveraging data for smarter decision-making.</li>
-        </ul>
-        
-        <h2>Contact Us</h2>
-        <p>Email: gezapeti+public@xxmail.com</p>
-        
 
-    </div>
-    
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p><strong>M Dwarf Informatics Ltd.</strong> is an independent technology consultancy specializing in applied research, systems design, and data-driven innovation. We help organizations turn complex technical challenges into reliable, measurable solutions.</p>
+            <p>Our work blends scientific thinking with practical engineering. Whether improving IT infrastructure or exploring emerging computational methods, our goal is consistent: to create clarity, precision, and long-term value through technology.</p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li><strong>IT Strategy & Architecture</strong> — Designing scalable systems, optimizing performance, and guiding digital transformation efforts.</li>
+                <li><strong>Research & Development</strong> — Investigating novel algorithms, simulation techniques, and data processing frameworks for emerging problems.</li>
+                <li><strong>Data Analytics</strong> — Building analytical pipelines that convert raw data into actionable business and scientific insights.</li>
+                <li><strong>Technical Consulting</strong> — Providing objective assessments, audits, and project oversight for mission-critical initiatives.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>For collaboration, consulting, or research inquiries, reach us at:</p>
+            <p>Email: <a href="mailto:gezapeti+public@xxmail.com" class="email">gezapeti+public@xxmail.com</a></p>
+        </section>
+    </main>
+
     <footer>
         &copy; 2025 M Dwarf Informatics Ltd. All rights reserved.
     </footer>
