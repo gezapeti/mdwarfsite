@@ -1,139 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M Dwarf Informatics Ltd.</title>
-    <style>
-        :root {
-            --primary: #0a3d62;
-            --accent: #1e90ff;
-            --bg: #f4f6f8;
-            --text: #333;
-        }
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            font-family: "Inter", Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-        header {
-            background-color: var(--primary);
-            color: #fff;
-            text-align: center;
-            padding: 60px 20px 40px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.2em;
-            font-weight: 600;
-        }
-        header p {
-            font-size: 1.1em;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
-        nav {
-            background: #062743;
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-        nav a {
-            color: #ddd;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-            transition: color 0.2s ease-in-out;
-        }
-        nav a:hover {
-            color: var(--accent);
-        }
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            background-color: #fff;
-            padding: 40px 30px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-            border-radius: 8px;
-        }
-        h2 {
-            color: var(--primary);
-            margin-top: 30px;
-            font-weight: 600;
-        }
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-        footer {
-            background-color: var(--primary);
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            margin-top: 40px;
-        }
-        a.email {
-            color: var(--accent);
-            text-decoration: none;
-            word-break: break-all;
-        }
-        a.email:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.6em;
-            }
-            main {
-                padding: 25px 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M Dwarf Informatics Ltd.</title>
+  <style>
+    :root { --primary:#0a3d62; --accent:#1e90ff; --bg:#f4f6f8; --text:#333; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: "Inter", Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    header { background:var(--primary); color:#fff; text-align:center; padding:60px 20px 30px; position:relative; }
+    header h1 { margin:0; font-size:2.1rem; font-weight:600; }
+    header p { margin:8px 0 0; opacity:.95; }
+    .lang-switch {
+      position:absolute; right:16px; top:16px; display:flex; gap:8px; align-items:center;
+      background:rgba(255,255,255,.08); padding:6px 8px; border-radius:8px;
+    }
+    .lang-btn {
+      display:inline-flex; align-items:center; gap:6px; cursor:pointer; border:0; background:transparent; color:#fff;
+      font-weight:600; font-size:.9rem; opacity:.85; padding:4px 6px; border-radius:6px;
+    }
+    .lang-btn[aria-pressed="true"] { background:rgba(255,255,255,.18); opacity:1; }
+    .flag { width:16px; height:12px; display:inline-block; border-radius:2px; box-shadow:0 0 0 1px rgba(0,0,0,.15) inset; }
+    /* Flags (inline SVG backgrounds) */
+    .flag.hu { background:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="3" height="2"><rect width="3" height="2" fill="%23ffffff"/><rect width="3" height="0.666" y="0" fill="%23ce2939"/><rect width="3" height="0.666" y="0.666" fill="%23ffffff"/><rect width="3" height="0.666" y="1.334" fill="%2324773d"/></svg>')
+      center/cover no-repeat; }
+    .flag.en { background:
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><clipPath id="c"><path d="M0,0 v30 h60 v-30 z"/></clipPath><path d="M0,0 v30 h60 v-30 z" fill="%23012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="%23fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" clip-path="url(%23c)" stroke="%23C8102E" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="%23fff" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="%23C8102E" stroke-width="6"/></svg>')
+      center/cover no-repeat; }
+
+    nav { background:#062743; display:flex; justify-content:center; gap:18px; padding:10px 12px; }
+    nav a { color:#ddd; text-decoration:none; font-weight:500; padding:6px 4px; }
+    nav a:hover { color:var(--accent); }
+    main { max-width:900px; margin:36px auto; background:#fff; padding:36px 28px; border-radius:10px; box-shadow:0 4px 16px rgba(0,0,0,.06); }
+    h2 { color:var(--primary); margin:24px 0 12px; font-weight:600; }
+    ul { list-style:square; margin-left:18px; }
+    footer { background:var(--primary); color:#fff; text-align:center; padding:18px; font-size:.92rem; margin:40px 0 0; }
+    a.email { color:var(--accent); text-decoration:none; word-break:break-word; }
+    a.email:hover { text-decoration:underline; }
+    .lang { display:none; }
+    .lang.active { display:block; }
+    @media (max-width:600px){
+      header h1 { font-size:1.6rem; }
+      main { padding:26px 20px; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>M Dwarf Informatics Ltd.</h1>
-        <p>Applied Research and Technology Consulting</p>
-    </header>
+  <header>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="Switch to English">
+        <span class="flag en" aria-hidden="true"></span><span>EN</span>
+      </button>
+      <button class="lang-btn" data-lang="hu" aria-pressed="false" aria-label="Váltás magyarra">
+        <span class="flag hu" aria-hidden="true"></span><span>HU</span>
+      </button>
+    </div>
+    <h1>M Dwarf Informatics Ltd.</h1>
+    <p class="tag-en">Applied Research and Technology Consulting</p>
+    <p class="tag-hu" style="display:none;">Alkalmazott kutatás és technológiai tanácsadás</p>
+  </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <!-- EN Navigation -->
+  <nav class="lang lang-en active" aria-label="Primary">
+    <a href="#about-en">About</a>
+    <a href="#services-en">Services</a>
+    <a href="#contact-en">Contact</a>
+  </nav>
 
-    <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <p><strong>M Dwarf Informatics Ltd.</strong> is an independent technology consultancy specializing in applied research, systems design, and data-driven innovation. We help organizations turn complex technical challenges into reliable, measurable solutions.</p>
-            <p>Our work blends scientific thinking with practical engineering. Whether improving IT infrastructure or exploring emerging computational methods, our goal is consistent: to create clarity, precision, and long-term value through technology.</p>
-        </section>
+  <!-- HU Navigation -->
+  <nav class="lang lang-hu" aria-label="Elsődleges">
+    <a href="#about-hu">Rólunk</a>
+    <a href="#services-hu">Szolgáltatások</a>
+    <a href="#contact-hu">Kapcsolat</a>
+  </nav>
 
-        <section id="services">
-            <h2>Our Services</h2>
-            <ul>
-                <li><strong>IT Strategy & Architecture</strong> — Designing scalable systems, optimizing performance, and guiding digital transformation efforts.</li>
-                <li><strong>Research & Development</strong> — Investigating novel algorithms, simulation techniques, and data processing frameworks for emerging problems.</li>
-                <li><strong>Data Analytics</strong> — Building analytical pipelines that convert raw data into actionable business and scientific insights.</li>
-                <li><strong>Technical Consulting</strong> — Providing objective assessments, audits, and project oversight for mission-critical initiatives.</li>
-            </ul>
-        </section>
+  <main>
+    <!-- English -->
+    <section class="lang lang-en active" id="about-en">
+      <h2>About Us</h2>
+      <p><strong>M Dwarf Informatics Ltd.</strong> is an independent technology consultancy specializing in applied research, systems design, and data-driven innovation. We help organizations turn complex technical challenges into reliable, measurable solutions.</p>
+      <p>Our work blends scientific thinking with practical engineering. Whether improving IT infrastructure or exploring emerging computational methods, the goal is consistent: clarity, precision, and durable value through technology.</p>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>For collaboration, consulting, or research inquiries, reach us at:</p>
-            <p>Email: <a href="mailto:gezapeti+public@xxmail.com" class="email">gezapeti+public@xxmail.com</a></p>
-        </section>
-    </main>
+    <section class="lang lang-en active" id="services-en">
+      <h2>Our Services</h2>
+      <ul>
+        <li><strong>IT Strategy & Architecture</strong> — Scalable systems, performance optimization, and guidance for digital transformation.</li>
+        <li><strong>Research & Development</strong> — Novel algorithms, simulation techniques, and data processing frameworks for new problems.</li>
+        <li><strong>Data Analytics</strong> — Pipelines that convert raw data into actionable business and scientific insight.</li>
+        <li><strong>Technical Consulting</strong> — Objective assessments, audits, and project oversight for mission-critical initiatives.</li>
+      </ul>
+    </section>
 
-    <footer>
-        &copy; 2025 M Dwarf Informatics Ltd. All rights reserved.
-    </footer>
+    <section class="lang lang-en active" id="contact-en">
+      <h2>Contact</h2>
+      <p>For collaboration, consulting, or research inquiries:</p>
+      <p>Email: <a class="email" href="mailto:gezapeti+public@xxmail.com">gezapeti+public@xxmail.com</a></p>
+    </section>
+
+    <!-- Hungarian -->
+    <section class="lang lang-hu" id="about-hu">
+      <h2>Rólunk</h2>
+      <p><strong>M Dwarf Informatics Ltd.</strong> független technológiai tanácsadó cég. Szakterületünk az alkalmazott kutatás, a rendszertervezés és az adatvezérelt innováció. Szervezeteknek segítünk a bonyolult technikai kihívások megbízható, mérhető megoldásokká alakításában.</p>
+      <p>Munkánk a tudományos gondolkodást gyakorlati mérnöki megközelítéssel ötvözi. Legyen szó IT-infrastruktúra fejlesztéséről vagy új számítási módszerek feltárásáról, célunk változatlan: egyértelműség, pontosság és tartós érték teremtése technológiával.</p>
+    </section>
+
+    <section class="lang lang-hu" id="services-hu">
+      <h2>Szolgáltatások</h2>
+      <ul>
+        <li><strong>IT-stratégia és architektúra</strong> — Skálázható rendszerek tervezése, teljesítményoptimalizálás, digitális transzformáció támogatása.</li>
+        <li><strong>Kutatás-fejlesztés</strong> — Új algoritmusok, szimulációs technikák és adatfeldolgozási keretrendszerek kutatása új feladatokra.</li>
+        <li><strong>Adat-analitika</strong> — Elemző folyamatok, amelyek a nyers adatokat üzleti és tudományos betekintéssé alakítják.</li>
+        <li><strong>Technikai tanácsadás</strong> — Objektív értékelések, auditok és projekt-felügyelet üzletkritikus kezdeményezésekhez.</li>
+      </ul>
+    </section>
+
+    <section class="lang lang-hu" id="contact-hu">
+      <h2>Kapcsolat</h2>
+      <p>Együttműködés, tanácsadás vagy kutatási megkeresés esetén:</p>
+      <p>Email: <a class="email" href="mailto:gezapeti+public@xxmail.com">gezapeti+public@xxmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 M Dwarf Informatics Ltd. All rights reserved.
+  </footer>
+
+  <script>
+    (function () {
+      const html = document.documentElement;
+      const btns = document.querySelectorAll('.lang-btn');
+      const enBlocks = document.querySelectorAll('.lang-en');
+      const huBlocks = document.querySelectorAll('.lang-hu');
+      const tagEn = document.querySelector('.tag-en');
+      const tagHu = document.querySelector('.tag-hu');
+
+      function setLang(lang) {
+        const isEN = lang === 'en';
+        html.setAttribute('lang', lang);
+        document.title = isEN ? 'M Dwarf Informatics Ltd.' : 'M Dwarf Informatics Ltd.';
+        enBlocks.forEach(el => el.classList.toggle('active', isEN));
+        huBlocks.forEach(el => el.classList.toggle('active', !isEN));
+        tagEn.style.display = isEN ? '' : 'none';
+        tagHu.style.display = isEN ? 'none' : '';
+        btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
+        localStorage.setItem('mdwarf_lang', lang);
+      }
+
+      btns.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+      setLang(localStorage.getItem('mdwarf_lang') || (navigator.language || 'en').startsWith('hu') ? 'hu' : 'en');
+    })();
+  </script>
 </body>
 </html>
